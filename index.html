@@ -85,7 +85,7 @@
     }
 
     .msg{
-      margin: 10px auto 18px;
+      margin: 10px auto 0;
       max-width: 56ch;
       font-size: 16px;
       line-height:1.65;
@@ -95,26 +95,7 @@
       color: #fff9ff;
     }
 
-    .actions{
-      display:flex; justify-content:center;
-      margin-top: 14px;
-      opacity:0;
-      transform: translateY(10px);
-      animation: rise 900ms 650ms ease forwards;
-    }
-
-    a.btn{
-      display:inline-block;
-      padding:12px 16px;
-      border-radius:14px;
-      font-weight:900;
-      text-decoration:none;
-      color: var(--text);
-      background: rgba(255,255,255,0.14);
-      border: 1px solid rgba(255,255,255,0.22);
-    }
-
-    .footer{ margin-top:14px; font-size: 12px; opacity: 0.82; }
+    .footer{ margin-top:18px; font-size: 12px; opacity: 0.82; }
 
     .balloons span{
       position:absolute;
@@ -144,7 +125,7 @@
 
     <h1>¡Feliz Cumple! 🥳</h1>
 
-    <div class="name" id="name">Adriana 🎈🎂</div>
+    <div class="name">Adriana 🎈🎂</div>
 
     <div class="msg" id="msg">
       Adriana, ¡feliz cumple! 🥳🎂💜<br><br>
@@ -155,25 +136,12 @@
       Pásala increíble hoy. ¡Te lo mereces! 🎈🎁
     </div>
 
-    <div class="actions">
-      <a class="btn" id="reply" href="#" target="_blank" rel="noopener">💬 Responder por WhatsApp</a>
-    </div>
-
     <div class="footer">Con cariño 💜</div>
 
     <div class="balloons" aria-hidden="true" id="balloons"></div>
   </div>
 
   <script>
-    // cumple.html?to=51999999999  (opcional)
-    const params = new URLSearchParams(location.search);
-    const to = params.get("to") || "";
-
-    // Link WhatsApp
-    const reply = document.getElementById("reply");
-    const text = encodeURIComponent("¡Gracias! 🥳🐱💜✨");
-    reply.href = to ? `https://wa.me/${to}?text=${text}` : `https://wa.me/?text=${encodeURIComponent("¡Feliz cumple! 🥳🐱💜✨")}`;
-
     // Globitos (paleta lila)
     const balloons = document.getElementById("balloons");
     const hues = [255, 265, 275, 285, 295];
